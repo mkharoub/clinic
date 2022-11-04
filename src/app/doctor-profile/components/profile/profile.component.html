@@ -1,0 +1,56 @@
+<div class="profile">
+  <div class="profile__head">
+    <div class="ph__bg" style="background-image: url('./assets/images/doctors-medical-gear.jpg')"></div>
+    <div class="ph-avatar-info-actions-wrapper">
+      <div class="container">
+        <div class="ph-avatar-info-actions d-flex align-items-center">
+          <div class="ph-avatar-wrapper">
+            <div class="ph-avatar avatar1 d-flex align-items-center justify-content-center">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="ph-info d-flex align-items-center justify-content-between">
+            <div>
+              <div class="fw-bold">Doctor Full Name</div>
+              <div>Dr. Max</div>
+            </div>
+            <div>
+              <div class="fw-bold">Specialization</div>
+              <div>Dermatology</div>
+            </div>
+            <div>
+              <div class="fw-bold">E-mail</div>
+              <div>max@clinic.com</div>
+            </div>
+            <div>
+              <div class="fw-bold">Birth Date</div>
+              <div>17/02/1986</div>
+            </div>
+          </div>
+          <div class="ph-actions">
+            <button type="button" class="btn btn-sm btn-outline-primary" [routerLink]="'/prescription'">
+              Add a prescription
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="profile__left-col col-7">
+        <app-panel>
+          <app-appointments></app-appointments>
+        </app-panel>
+      </div>
+      <div class="col-5 d-flex flex-column profile__right-col">
+        <app-panel>
+          <app-calendar></app-calendar>
+        </app-panel>
+        <app-panel>
+          <app-clinics></app-clinics>
+        </app-panel>
+      </div>
+    </div>
+  </div>
+</div>

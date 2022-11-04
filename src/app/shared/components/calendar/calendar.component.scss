@@ -1,0 +1,47 @@
+.calendar {
+  .calendar__title {}
+
+  .calendar__content {
+    .table {
+      td {
+        cursor: pointer;
+        border: 0;
+        padding: 5px;
+        transition: all 300ms ease;
+        text-align: center;
+        position: relative;
+
+        &.disabled {
+          background: #ddd;
+          cursor: default;
+        }
+
+        &.selected {
+          background: #eb7f05;
+          color: #fff;
+        }
+
+        &:hover:not(.disabled):not(.selected) {
+          background: #efefef;
+        }
+
+        .calendar__appointments {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 5px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .calendar__appointment {
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

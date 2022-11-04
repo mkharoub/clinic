@@ -1,0 +1,32 @@
+<div class="calendar">
+  <div class="calendar__title title1">Title</div>
+  <div class="calendar__content">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let week of calendarData">
+        <td *ngFor="let day of week"
+            [ngClass]="{'disabled': day.disabled, 'selected': day.isToday}"
+            (click)="setWeekAppointments(day)">
+          <span>{{day.date.getDate()}}</span>
+          <div class="calendar__appointments" *ngIf="day.appointments && day.appointments.length > 0">
+            <div class="calendar__appointment appointment-number-{{index + 1}}"
+                 *ngFor="let calendarAppointment of day.appointments; let index = index;">
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

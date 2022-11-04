@@ -1,0 +1,57 @@
+.header {
+  padding: 10px 15px;
+  background: #fff;
+
+  .header__logo {
+    a {
+      color: #444;
+      text-decoration: none;
+    }
+  }
+
+  .header__actions {
+    gap: 25px;
+
+    .ha__search {
+      position: relative;
+
+      input {
+        background: #efefef;
+        padding-right: 25px;
+        width: 300px;
+
+        &:focus {
+          background: #fff;
+
+          & + .fa-search {
+            color: #444;
+          }
+        }
+      }
+
+      .fa-search {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #b1b1b1;
+      }
+    }
+
+    .ha__others {
+      gap: 15px;
+      font-size: 20px;
+
+      > i {
+        cursor: pointer;
+        color: #787878;
+        transition: all 300ms ease;
+
+        &:hover,
+        &:focus {
+          color: #444;
+        }
+      }
+    }
+  }
+}

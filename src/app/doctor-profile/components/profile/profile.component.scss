@@ -1,0 +1,58 @@
+.profile {
+  margin-bottom: 30px;
+
+  .profile__head {
+    margin-bottom: 30px;
+
+    .ph__bg {
+      height: 240px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #cfd9ea;
+        opacity: 0.7;
+      }
+    }
+
+    .ph-avatar-info-actions-wrapper {
+      background: #fff;
+
+      .ph-avatar-info-actions {
+        gap: 50px;
+        padding: 15px 0;
+
+        .ph-avatar-wrapper {
+          width: 130px;
+          position: relative;
+
+          .ph-avatar {
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            height: 130px;
+            bottom: 100%;
+          }
+        }
+
+        .ph-info {
+          flex: 1;
+          gap: 30px;
+        }
+      }
+    }
+  }
+
+  .profile__right-col {
+    gap: 16px;
+  }
+}

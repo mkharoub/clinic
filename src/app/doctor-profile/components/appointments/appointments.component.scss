@@ -1,0 +1,40 @@
+.appointments {
+  .appointments__title {}
+
+  .appointments__content {
+    .appointments-group {
+      gap: 50px;
+
+      .appointments-group__content {
+        flex: 1;
+        gap: 10px;
+
+        .appointment {
+          gap: 15px;
+
+          .appointment__time {
+            flex: 0 0 12%;
+            font-size: 13px;
+            line-height: 1.4;
+          }
+
+          .appointment__info {
+            flex: 1;
+            padding: 6px 12px;
+            background: #f7f7f7;
+            position: relative;
+
+            &:after {
+              content: ' ';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              width: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

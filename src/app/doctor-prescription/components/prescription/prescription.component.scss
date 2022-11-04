@@ -1,0 +1,23 @@
+.prescription {
+  margin-top: 30px;
+
+  .prescription__head {
+    gap: 40px;
+
+    .patient-avatar {
+      flex: 0 0 20%;
+    }
+
+    .patient-info-wrapper {
+      gap: 20px;
+
+      .patient-diagnose {
+        gap: 30px;
+
+        > div:first-child {
+          flex: 0 0 auto;
+        }
+      }
+    }
+  }
+}

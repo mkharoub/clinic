@@ -1,0 +1,82 @@
+<div class="prescription">
+  <div class="container">
+    <app-panel>
+      <div class="prescription__content px-5">
+        <div class="prescription__head d-flex align-items-center justify-content-between mb-5">
+          <div class="patient-avatar avatar1">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="patient-info-wrapper d-flex flex-column flex-grow-1">
+            <div class="patient-info d-flex align-items-center justify-content-between">
+              <div>
+                <div class="fw-bold">Patient Full Name</div>
+                <div>Joe</div>
+              </div>
+              <div>
+                <div class="fw-bold">Gender</div>
+                <div>Male</div>
+              </div>
+              <div>
+                <div class="fw-bold">Age</div>
+                <div>33</div>
+              </div>
+              <div>
+                <div class="fw-bold">Phone Number</div>
+                <div>0597536955</div>
+              </div>
+            </div>
+            <div class="patient-diagnose d-flex align-items-center">
+              <div class="fw-bold">Patient</div>
+              <select class="form-control" [(ngModel)]="selectedPatient" (change)="onSelectPatient()">
+                <option value="">Select Patient</option>
+                <option value="{{patient.id}}" *ngFor="let patient of patients">{{patient.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="prescription_listing mb-3" *ngIf="patient">
+          <div class="d-flex align-items-center justify-content-end mb-1">
+            <button type="button" class="btn btn-sm btn-link add-new-btn" (click)="toggleAddPrescriptionForm()">
+            <span *ngIf="!showAddPrescriptionForm">
+                <i class="fa fa-plus-circle"></i>
+                Add New Prescription
+            </span>
+              <span *ngIf="showAddPrescriptionForm">
+              <i class="fa fa-minus-circle"></i>
+              Hide Add new Prescription
+            </span>
+            </button>
+          </div>
+          <div class="mb-3" *ngIf="showAddPrescriptionForm">
+            <app-add-prescription [patientId]="selectedPatient"></app-add-prescription>
+          </div>
+          <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Diagnose</th>
+              <th>Before/After Meal</th>
+              <th>Duration</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prescription of patient.prescriptions">
+              <td>{{prescription.medicine}}</td>
+              <td>{{prescription.diagnose}}</td>
+              <td>{{prescription.afterBeforeMeal}}</td>
+              <td>{{prescription.duration}}</td>
+              <td style="color: red;">
+                <i class="fa fa-minus-circle pointer"
+                   aria-hidden="true"
+                   (click)="onRemovePrescription(patient.id, prescription.id)"></i>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn btn-sm btn-dark" (click)="onGoBack()">Back</button>
+      </div>
+    </app-panel>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="appointments" *ngIf="appointments && appointments.length > 0; else noAppointments">
+  <div class="appointments__title title1">Appointments</div>
+  <div class="appointments__content">
+    <ng-container *ngFor="let appointmentsGroup of appointments; let last = last">
+      <div class="appointments-group d-flex align-items-start">
+        <div class="appointments-group__title">{{appointmentsGroup[0].date.toLocaleDateString()}}</div>
+        <div class="appointments-group__content d-flex flex-column">
+          <div class="appointment d-flex align-items-center" *ngFor="let appointment of appointmentsGroup; let index= index;">
+            <div class="appointment__time">
+              <div>{{appointment.fromTime}}</div>
+              <div>{{appointment.toTime}}</div>
+            </div>
+            <div class="appointment__info appointment-number-{{index + 1}} d-flex align-items-center justify-content-between">
+              <div>{{appointment.patientName}}</div>
+              <div>{{appointment.clinicName}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator my-3" *ngIf="!last"></div>
+    </ng-container>
+  </div>
+</div>
+<ng-template #noAppointments>
+  <p class="mb-0">No appointments this week!</p>
+</ng-template>
